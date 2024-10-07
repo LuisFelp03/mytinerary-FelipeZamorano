@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'; // Para manejar la navegación
+import { useNavigate } from 'react-router-dom';
 
 const offers = [
     { name: 'Paris', img: 'https://cdn2.civitatis.com/francia/paris/galeria/torre-eiffel-altura.jpg' },

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const HeroSection = () => {
     const [activeSlide, setActiveSlide] = useState(0);
-    const imagesPerSlide = 4; // Número de imágenes por slide
+    const imagesPerSlide = 4;
     const cities = [
         { name: "New York", img: "https://mbmarcobeteta.com/wp-content/uploads/2021/02/shutterstock_248799484-1024x683.jpg?text=New+York" },
         { name: "Paris", img: "https://a.storyblok.com/f/112937/568x464/954a33563a/paris-de-noche.jpg?text=Paris" },
