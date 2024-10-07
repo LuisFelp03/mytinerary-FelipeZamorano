@@ -1,23 +1,32 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const HeroSection = () => {
     const [activeSlide, setActiveSlide] = useState(0);
+    const imagesPerSlide = 4; // Número de imágenes por slide
     const cities = [
         { name: "New York", img: "https://mbmarcobeteta.com/wp-content/uploads/2021/02/shutterstock_248799484-1024x683.jpg?text=New+York" },
         { name: "Paris", img: "https://a.storyblok.com/f/112937/568x464/954a33563a/paris-de-noche.jpg?text=Paris" },
         { name: "Tokyo", img: "https://media.nomadicmatt.com/2024/tokyothings.jpeg?text=Tokyo" },
         { name: "London", img: "https://www.vietnamairlines.com/~/media/Images/Discovery/England/London/canh%20dep/986x906/London_canhdep_986x906.jpg?text=London" },
         { name: "Sydney", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcAD02FEeGrwiC9cRBO-J-zeEGM2NA1deFZQ&s?text=Sydney" },
-        { name: "Rome", img: "https://via.placeholder.com/400x300?text=Rome" },
-        { name: "Dubai", img: "https://via.placeholder.com/400x300?text=Dubai" },
-        { name: "Berlin", img: "https://via.placeholder.com/400x300?text=Berlin" },
-        { name: "Moscow", img: "https://via.placeholder.com/400x300?text=Moscow" },
-        { name: "Shanghai", img: "https://via.placeholder.com/400x300?text=Shanghai" },
-        { name: "Rio de Janeiro", img: "https://via.placeholder.com/400x300?text=Rio+de+Janeiro" },
-        { name: "Los Angeles", img: "https://via.placeholder.com/400x300?text=Los+Angeles" }
+        { name: "Rome", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfuSySmsFD9q4inQ7JFLJyqKTxHO4rCclj3Q&s?text=Rome" },
+        { name: "Dubai", img: "https://www.cloud-europamundo.com/img/carousel/hd/Dubai_20210328212559.jpg?text=Dubai" },
+        { name: "Berlin", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkRCIzbkXMj8M0p5_H7nqxJ3P03fdXmljc-w&s?text=Berlin" },
+        { name: "Moscow", img: "https://i0.wp.com/onedayitinerary.com/wp-content/uploads/2020/10/One-day-in-Moscow-Itinerary.jpg?resize=723%2C542&ssl=1?text=Moscow" },
+        { name: "Shanghai", img: "https://viajes.nationalgeographic.com.es/medio/2019/03/27/shnaghai_527bc86f_1280x720.jpg?text=Shanghai" },
+        { name: "Rio de Janeiro", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj6PS3o-7g_oSLYpThmXL2EaGQEiSXcbgYEA&s?text=Rio+de+Janeiro" },
+        { name: "Los Angeles", img: "https://hips.hearstapps.com/hmg-prod/images/elle-los-angeles02-1559906859.jpg?text=Los+Angeles" }
     ];
 
-    const totalSlides = Math.ceil(cities.length / 4);
+    const totalSlides = Math.ceil(cities.length / imagesPerSlide); // Calcular dinámicamente cuántas slides son necesarias
+
+    // Manejar el cambio automático de las diapositivas
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveSlide((prev) => (prev + 1) % totalSlides);
+        }, 5000); // Cambia cada 5 segundos
+        return () => clearInterval(interval);
+    }, [totalSlides]);
 
     const handleNext = () => {
         setActiveSlide((prev) => (prev + 1) % totalSlides);
@@ -29,6 +38,13 @@ const HeroSection = () => {
 
     return (
         <div className="relative w-full">
+            {/* Banner */}
+            <img
+                src="./resources/banner3.png"
+                alt="Banner"
+                className="w-full h-56 md:h-80 object-contain mb-4"
+            />
+
             {/* Carousel */}
             <div className="relative overflow-hidden rounded-lg" data-carousel="static">
                 <div className="relative h-56 md:h-96">
@@ -39,12 +55,15 @@ const HeroSection = () => {
                             data-carousel-item={slideIndex === activeSlide ? "active" : ""}
                         >
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
-                                {cities.slice(slideIndex * 4, slideIndex * 4 + 4).map((city, index) => (
-                                    <div key={index} className="text-center">
-                                        <img src={city.img} alt={city.name} className="w-full h-32 object-cover rounded-lg" />
-                                        <p className="mt-2 text-lg font-semibold">{city.name}</p>
-                                    </div>
-                                ))}
+                                {/* Renderizar las imágenes dinámicamente por slide */}
+                                {cities
+                                    .slice(slideIndex * imagesPerSlide, slideIndex * imagesPerSlide + imagesPerSlide)
+                                    .map((city, index) => (
+                                        <div key={index} className="text-center">
+                                            <img src={city.img} alt={city.name} className="w-full h-32 md:h-48 object-cover rounded-lg" />
+                                            <p className="mt-2 text-lg font-semibold">{city.name}</p>
+                                        </div>
+                                    ))}
                             </div>
                         </div>
                     ))}
