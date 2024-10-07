@@ -15,12 +15,12 @@ const CallToAction = () => {
     };
 
     return (
-        <section className="py-20">
+        <section className="py-20 bg-blue-400">
             <div className="container mx-auto">
                 <h2 className="text-4xl font-bold text-center mb-10">Popular Mytineraries</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 ">
                     {offers.map((offer, index) => (
-                        <div key={index} className="shadow-lg rounded-lg overflow-hidden">
+                        <div key={index} className="shadow-lg rounded-lg overflow-hidden bg-white">
                             <img src={offer.img} alt={offer.name} className="w-full h-64 object-cover" />
                             <div className="p-6">
                                 <h3 className="text-2xl font-bold mb-2">{offer.name}</h3>
@@ -32,7 +32,7 @@ const CallToAction = () => {
                 <div className="text-center mt-10">
                     <button
                         onClick={handleShowMore}
-                        className="bg-blue-600 text-white py-3 px-6 rounded-full text-lg hover:bg-blue-500 transition-colors"
+                        className="bg-white text-black py-3 px-6 rounded-full text-lg hover:bg-blue-500 transition-colors"
                     >
                         Show More
                     </button>

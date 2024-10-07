@@ -37,7 +37,7 @@ const HeroSection = () => {
     };
 
     return (
-        <div className="relative w-full">
+        <div className="relative w-full bg-blue-200">
             {/* Banner */}
             <img
                 src="./resources/banner3.png"
