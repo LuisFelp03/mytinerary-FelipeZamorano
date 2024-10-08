@@ -13,6 +13,12 @@ const Footer = () => {
                     </div>
                 </div>
 
+                <div className="mt-4 md:mt-0 md:ml-6 text-center md:text-left">
+                    <p>1234 Travel Road</p>
+                    <p>Adventure City, TX 78910</p>
+                    <p>Phone: (123) 456-7890</p>
+                </div>
+
                 {/* Íconos de redes sociales */}
                 <div className="flex space-x-4 mt-4 md:mt-0">
                     <a href="#" className="text-white hover:text-gray-400"><FaFacebookF /></a>
