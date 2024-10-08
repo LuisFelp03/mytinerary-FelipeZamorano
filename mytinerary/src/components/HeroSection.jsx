@@ -40,9 +40,9 @@ const HeroSection = () => {
         <div className="relative w-full bg-blue-200">
             {/* Banner */}
             <img
-                src="./resources/banner3.png"
+                src="./resources/banner3.jpg"
                 alt="Banner"
-                className="w-full h-80 object-contain mb-4"
+                className="w-full h-120 object-contain mb-4"
             />
 
             {/* Carousel */}
