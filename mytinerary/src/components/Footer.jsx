@@ -25,7 +25,8 @@ const Footer = () => {
 
                 {/* Sección de enlaces */}
                 <div className="mt-4 md:mt-0">
-                    <p className="font-bold">MyTinerary</p>
+                    <img src="../resources/favicon2.webp" alt="Travel Advisors Logo" className="w-16 h-16 mx-auto rounded-full" />
+
                 </div>
             </div>
         </footer>

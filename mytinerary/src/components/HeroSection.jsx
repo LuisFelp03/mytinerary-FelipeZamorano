@@ -42,7 +42,7 @@ const HeroSection = () => {
             <img
                 src="./resources/banner3.png"
                 alt="Banner"
-                className="w-full h-56 md:h-80 object-contain mb-4"
+                className="w-full h-80 object-contain mb-4"
             />
 
             {/* Carousel */}
@@ -54,13 +54,13 @@ const HeroSection = () => {
                             className={`absolute inset-0 transition-all duration-700 ease-in-out ${slideIndex === activeSlide ? "block" : "hidden"}`}
                             data-carousel-item={slideIndex === activeSlide ? "active" : ""}
                         >
-                            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-4">
                                 {/* Renderizar las imágenes dinámicamente por slide */}
                                 {cities
                                     .slice(slideIndex * imagesPerSlide, slideIndex * imagesPerSlide + imagesPerSlide)
                                     .map((city, index) => (
                                         <div key={index} className="text-center">
-                                            <img src={city.img} alt={city.name} className="w-full h-32 md:h-48 object-cover rounded-lg" />
+                                            <img src={city.img} alt={city.name} className="w-full h-40 sm:h-48 md:h-64 object-cover rounded-lg" />
                                             <p className="mt-2 text-lg font-semibold">{city.name}</p>
                                         </div>
                                     ))}
