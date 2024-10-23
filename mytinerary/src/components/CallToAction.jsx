@@ -31,7 +31,7 @@ const CallToAction = () => {
                 <h2 className="text-4xl font-bold text-center mb-10">Popular Mytineraries</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                     {offers.map((offer, index) => (
-                        <div key={index} className="shadow-lg rounded-lg overflow-hidden bg-white">
+                        <div key={index} className="shadow-lg rounded-lg overflow-hidden bg-white border-4 border-blue-500 hover:scale-105 hover:shadow-2xl transition-transform duration-300 ease-in-out">
                             <img src={offer.img} alt={offer.name} className="w-full h-64 object-cover" />
                             <div className="p-6">
                                 <h3 className="text-2xl font-bold mb-2">{offer.name}</h3>

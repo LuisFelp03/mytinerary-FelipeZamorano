@@ -57,9 +57,9 @@ const CitiesPage = () => {
             {filteredCities.length === 0 ? (
                 <p className="text-center text-gray-600">No cities match your search.</p>
             ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
                     {filteredCities.map((city) => (
-                        <div key={city.id} className="shadow-lg rounded-lg overflow-hidden bg-white">
+                        <div key={city.id} className="shadow-lg rounded-lg overflow-hidden bg-white border-4 border-blue-500 hover:scale-105 hover:shadow-2xl transition-transform duration-300 ease-in-out">
                             <img src={city.photo} alt={city.name} className="w-full h-64 object-cover" />
                             <div className="p-6">
                                 <h3 className="text-2xl font-bold mb-2">{city.name}</h3>
