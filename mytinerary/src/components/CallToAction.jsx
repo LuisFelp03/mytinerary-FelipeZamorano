@@ -45,7 +45,7 @@ const CallToAction = () => {
 
             <div className="flex justify-center mt-10">
                 <button
-                    onClick={() => navigate('/cities')} // arreglar
+                    onClick={() => navigate('/CitiesPage')} // arreglar
                     className="bg-gray-800 text-white py-3 px-6 rounded-full text-lg hover:bg-blue-600 transition-colors"
                 >
                     Explore More Destinations
