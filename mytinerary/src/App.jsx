@@ -4,6 +4,7 @@ import HeroSection from './components/HeroSection';
 import CallToAction from './components/CallToAction';
 import Footer from './components/Footer';
 import CitiesPage from './components/CitiesPage';
+import CityDetails from './components/CityDetails';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HeroSection />} />
           <Route path="/cities" element={<CitiesPage />} />
+          <Route path="/city/:id" element={<CityDetails />} />
         </Routes>
         <CallToAction />
         <Footer />
