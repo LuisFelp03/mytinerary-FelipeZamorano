@@ -29,7 +29,7 @@ const CitiesPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
                 {cities.map((city) => (
                     <div key={city.id} className="shadow-lg rounded-lg overflow-hidden bg-white">
-                        <img src={city.imageUrl} alt={city.name} className="w-full h-64 object-cover" />
+                        <img src={city.photo} alt={city.name} className="w-full h-64 object-cover" />
                         <div className="p-6">
                             <h3 className="text-2xl font-bold mb-2">{city.name}</h3>
                             <p className="text-gray-700">{city.description}</p>
